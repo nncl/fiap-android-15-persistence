@@ -50,7 +50,7 @@
             android:id="@+id/btnSignIn"
             android:layout_below="@+id/chkSession"
             android:clickable="true"
-            android:onClick="doSignIn()"
+            android:onClick="doSignIn"
             android:layout_centerHorizontal="true" />
     </RelativeLayout>
 </ScrollView>

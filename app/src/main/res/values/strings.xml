@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Persistence</string>
+    <string name="title_activity_books">BooksActivity</string>
 </resources>
