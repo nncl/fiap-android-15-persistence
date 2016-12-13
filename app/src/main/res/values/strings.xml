@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">Persistence</string>
+    <string name="app_name">Persistence App</string>
     <string name="title_activity_books">BooksActivity</string>
 </resources>

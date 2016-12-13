@@ -16,3 +16,7 @@
     - RX Java
     - Event Bus
     - Listener
+
+## DB - SQLite
+
+- Initialize `initializeInstance` into our app just once
