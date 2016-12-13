@@ -20,3 +20,8 @@
 ## DB - SQLite
 
 - Initialize `initializeInstance` into our app just once
+
+## TO DO
+
+- Files
+- Contact List

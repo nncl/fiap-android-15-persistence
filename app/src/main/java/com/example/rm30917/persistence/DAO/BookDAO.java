@@ -56,7 +56,7 @@ public class BookDAO {
                 null);
 
         if (cursor != null) {
-            if(cursor.moveToFirst()){
+            if (cursor.moveToFirst()) {
                 do {
                     Book livro = new Book();
                     livro.setId(cursor.getInt(cursor.getColumnIndex(
@@ -68,29 +68,29 @@ public class BookDAO {
                     livro.setAuthor(cursor.getString(
                             cursor.getColumnIndex(Book.COMPANY)));
                     livros.add(livro);
-                } while(cursor.moveToNext());
+                } while (cursor.moveToNext());
             }
         }
         DatabaseManager.getInstance().closeDatabase();
         return livros;
     }
 
-    public Cursor carregaDadoById(int id){
+    public Cursor carregaDadoById(int id) {
         Cursor cursor;
-        String[] campos =  {Book.ID,Book.TITLE, Book.AUTHOR, Book.COMPANY};
+        String[] campos = {Book.ID, Book.TITLE, Book.AUTHOR, Book.COMPANY};
         String where = Book.ID + "=" + id;
         db = DatabaseManager.getInstance().openDatabase(true);
         cursor = db.query(Book.TABLE_NAME, campos,
                 where, null, null, null, null, null);
 
-        if(cursor!=null){
+        if (cursor != null) {
             cursor.moveToFirst();
         }
         DatabaseManager.getInstance().closeDatabase();
         return cursor;
     }
 
-    public void alteraRegistro(Book livro){
+    public void alteraRegistro(Book livro) {
         ContentValues valores;
         String where;
 
@@ -103,14 +103,14 @@ public class BookDAO {
         valores.put(Book.AUTHOR, livro.getAuthor());
         valores.put(Book.COMPANY, livro.getCompany());
 
-        db.update(Book.TABLE_NAME, valores,where,null);
+        db.update(Book.TABLE_NAME, valores, where, null);
         DatabaseManager.getInstance().closeDatabase();
     }
 
-    public void deletaRegistro(int id){
+    public void deletaRegistro(int id) {
         String where = Book.ID + "=" + id;
         db = DatabaseManager.getInstance().openDatabase(false);
-        db.delete(Book.TABLE_NAME,where,null);
+        db.delete(Book.TABLE_NAME, where, null);
         DatabaseManager.getInstance().closeDatabase();
     }
 }

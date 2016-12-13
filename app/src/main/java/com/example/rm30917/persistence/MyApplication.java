@@ -12,15 +12,18 @@ import com.facebook.stetho.Stetho;
  */
 public class MyApplication extends Application {
 
+    private static Context context;
+
     public void onCreate() {
         super.onCreate();
         Stetho.initializeWithDefaults(this);
+        this.context = getApplicationContext();
         DatabaseManager.initializeInstance(new DBHelper());
     }
 
     // Return context cause we need it into our DBHelper bro
     public static Context getContext(){
-        return getContext();
+        return context;
     }
 
 }

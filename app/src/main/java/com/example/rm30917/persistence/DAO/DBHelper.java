@@ -3,6 +3,7 @@ package com.example.rm30917.persistence.DAO;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import com.example.rm30917.persistence.MyApplication;
+import com.example.rm30917.persistence.model.Book;
 
 /**
  * Created by RM30917 on 12/12/2016.
