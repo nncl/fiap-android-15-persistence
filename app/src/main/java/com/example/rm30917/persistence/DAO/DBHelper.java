@@ -21,12 +21,30 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL(BookDAO.createTable());
-        // TODO call seed()
+        seed();
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
+    }
+
+    private void seed() {
+        BookDAO dao = new BookDAO();
+
+        Book book = new Book();
+        book.setTitle("The Catcher In The Rye");
+        book.setCompany("FORGOT");
+        book.setAuthor("FORGOT");
+
+        dao.insereDado(book);
+
+        Book book2 = new Book();
+        book2.setTitle("Sherlock Holmes - The Red Headed League");
+        book2.setCompany("FORGOT");
+        book2.setAuthor("FORGOT");
+
+        dao.insereDado(book2);
     }
 
     // 3rd -> onDowngrade -< not required, but possible bro

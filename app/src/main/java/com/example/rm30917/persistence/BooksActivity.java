@@ -28,28 +28,8 @@ public class BooksActivity extends AppCompatActivity {
             }
         });
 
-//        BookDAO dao = new BookDAO();
-//        dao.carregaDados();
-        seed();
-    }
-
-    // \o/
-    private void seed() {
         BookDAO dao = new BookDAO();
-
-        Book book = new Book();
-        book.setTitle("The Catcher In The Rye");
-        book.setCompany("FORGOT");
-        book.setAuthor("FORGOT");
-
-        dao.insereDado(book);
-
-        Book book2 = new Book();
-        book2.setTitle("Sherlock Holmes - The Red Headed League");
-        book2.setCompany("FORGOT");
-        book2.setAuthor("FORGOT");
-
-        dao.insereDado(book2);
+        dao.carregaDados();
     }
 
 }
